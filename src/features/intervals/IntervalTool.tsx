@@ -7,13 +7,12 @@ import { INTERVALS } from '../../data/intervals.ts'
 import { intervalBetween } from '../../domain/music-theory/intervals.ts'
 import { formatNote, spellPitch } from '../../domain/music-theory/notes.ts'
 import type { AccidentalPreference, PitchClass } from '../../domain/music-theory/types.ts'
-import { usePreferredPitch } from '../../hooks/usePreferredPitch.ts'
 import { routeById } from '../../utils/routes.ts'
 import { capitalize, semitoneLabel } from '../../utils/text.ts'
 
 export function IntervalTool() {
   const page = routeById('intervals')
-  const [origin, setOrigin] = usePreferredPitch(0)
+  const [origin, setOrigin] = useState<PitchClass>(0)
   const [target, setTarget] = useState<PitchClass>(7)
   const [preference, setPreference] = useState<AccidentalPreference>('sharp')
 
