@@ -32,8 +32,15 @@ npm run dev
 Outros comandos:
 
 ```bash
-npm test          # testes do domínio musical
+npm test          # testes do domínio musical e utilitários
+npm run test:e2e  # testes de interface com Playwright (veja abaixo)
 npm run build     # TypeScript e build de produção
+```
+
+Na primeira vez que rodar os testes E2E, instale o navegador do Playwright:
+
+```bash
+npx playwright install chromium
 ```
 
 Abra o endereço que o Vite mostrar, em geral `http://localhost:5173/`.
